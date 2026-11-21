@@ -1,0 +1,21 @@
+name: Build and axiom audit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build (fetches the Mathlib cache, compiles this project from scratch)
+        uses: leanprover/lean-action@v1
+      - name: Axiom audit
+        run: |
+          lake env lean Audit.lean | tee axioms.log
+          lake env lean AuditRecetaB.lean | tee -a axioms.log
+          if grep -E 'sorryAx|Lean\.ofReduceBool|error' axioms.log; then
+            echo "Unexpected axiom or error"; exit 1
+          fi

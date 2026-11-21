@@ -1,0 +1,12 @@
+import Roitman.Main
+import Roitman.CH
+import Roitman.Corollaries
+
+#print axioms Roitman.dominating_aleph_one_implies_mad_aleph_one
+#print axioms Roitman.indexed_domination_implies_mad
+#print axioms Roitman.exists_good_family
+#print axioms Roitman.d_eq_aleph_one_implies_a_eq_aleph_one
+#print axioms Roitman.ch_exists_almostStronglySeparable_MAD
+#print axioms Roitman.almostStronglySeparable_shelahSteprans
+#print axioms Roitman.a_le_d_of_continuum_le_aleph_two
+#print axioms Roitman.strict_d_lt_a_lower_bounds
