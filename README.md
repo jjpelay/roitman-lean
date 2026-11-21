@@ -7,14 +7,21 @@ Lean 4 / Mathlib formalization of the main theorem of
 The theorem settles, in ZFC, a question of Roitman from the 1970s: if the dominating number 𝔡 is ℵ₁, then the
 almost-disjointness number 𝔞 is ℵ₁.
 
-The main theorem is proved twice, through two different constructions of the MAD family:
+## How this formalization came about
 
-- `Roitman/RecetaB/` (**"recipe B"**) follows the construction in the arXiv preprint, which uses reservation
-  towers. Lemma and theorem numbers in its comments refer to arXiv:2610.00639.
-- `Roitman/` (top level) follows an earlier draft of the same paper, which uses a gap invariant and a counting
-  lemma.
+The proofs were written first, on paper; this Lean formalization came afterwards, as a check of the finished
+manuscripts. It was not used to discover the proof.
 
-Both share the basic definitions (`IsMAD`, `DominatingSet`, the cardinal characteristics) and the domination lemmas.
+There were two written versions of the argument, and both were formalized:
+
+- **Recipe B** (`Roitman/RecetaB/`) is **the paper exactly as posted on arXiv** ([arXiv:2610.00639](https://arxiv.org/abs/2610.00639)).
+  Its construction uses reservation towers, and the lemma and theorem numbers in its comments are those of the
+  arXiv version.
+- **The first construction** (`Roitman/`, top level) is a **preliminary version that was never published**. It
+  proves the same theorem with a gap invariant and a counting lemma instead.
+
+So the main theorem is checked twice, through two different constructions of the MAD family. Both share the basic
+definitions (`IsMAD`, `DominatingSet`, the cardinal characteristics) and the domination lemmas.
 
 ## Main statements
 
